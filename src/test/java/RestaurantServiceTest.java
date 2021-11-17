@@ -85,10 +85,12 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
-    public void verify_order_total_on_for_Selected_items() {
+    public void verify_order_total_on_for_Selected_items(){
         List<Item> itemsSelected = new ArrayList<>();
+        restaurant.addToMenu("Sweet corn soup",119);
         List<Item> restaurantMenu = restaurant.getMenu();
         itemsSelected.add(restaurantMenu.get(0));
-        assertEquals(119, restaurant.orderTotal(itemsSelected));
+        assertEquals(119,restaurant.total_value_of_selected_items(itemsSelected));
     }
+
 }
